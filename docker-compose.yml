@@ -1,0 +1,17 @@
+version: "3.7"
+
+name: dcstack
+
+services:
+  app:
+    container_name: discord-bot
+    image: java_discord
+    volumes:
+      - ./:/db
+    build: .
+    environment:
+      - TOKEN=${TOKEN}
+
+volumes:
+  dcdb:
+    external: true
